@@ -20,7 +20,7 @@ let resetFunction = function resetCounter() {
 }
 
 let updateFunction = function updateCounterscreen() {
-    let counterValue = utils.getCounterValue()
+    let counterValue = utils.getCounterValue();
     screen.innerHTML = counterValue;
     screen.style.color = utils.checkCounterColor(counterValue, utils.getMaxPeople());
 }
@@ -30,13 +30,13 @@ const subtractButton = document.getElementById("minus");
 const resetButton = document.getElementById("reset");
 const screen = document.getElementById("screen");
 
-initMaxPeople();
+initApplication();
 
 addButton.addEventListener("click", increaseFunction);
 subtractButton.addEventListener("click", decreaseFunction);
 resetButton.addEventListener("click", resetFunction); 
 
-function initMaxPeople(){
-    utils.setMaxPeople(prompt("lollissimo fra"));
+function initApplication(){
+    utils.setMaxPeople(prompt("Inserisci il numero di persone già presenti, se non inserirai un numero sarà automaticamente 0"));
     updateFunction();
 }
