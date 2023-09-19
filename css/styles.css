@@ -1,0 +1,31 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.button {
+    text-decoration: none;
+
+    color: #fff;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #5D6063;
+    background-color: #5995DA;
+
+    width: 200px;
+    margin: 20px auto;
+}
+
+.screen_container {
+    font-size: 50px;
+    text-align: center;
+    border: 2px solid #5D6063;
+    width: 200px;
+    margin: 20px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.screen {
+    margin: auto 0px;
+}
