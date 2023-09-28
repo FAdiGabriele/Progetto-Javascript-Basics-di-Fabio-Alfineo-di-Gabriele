@@ -15,9 +15,9 @@ function isFirstOverSeventyPercentOfSecond(first, second) {
 export function checkCounterColor(value, maxValueAllowed) {
     let selectedColor;
 
-    if (value >= maxValueAllowed && maxValueAllowed != 0) {
+    if (maxValueAllowed > 0 && value >= maxValueAllowed) {
         selectedColor = colors.red;
-    } else if (isFirstOverSeventyPercentOfSecond(value, maxValueAllowed) && maxValueAllowed != 0) {
+    } else if (maxValueAllowed > 0 && isFirstOverSeventyPercentOfSecond(value, maxValueAllowed)) {
         selectedColor = colors.orange;
     } else {
         selectedColor = colors.black;
@@ -43,7 +43,8 @@ export function getCounterValue() {
 }
 
 export function setMaxPeople(value) {
-    if (isNaN(value)) {
+    console.log(value);
+    if (isNaN(value) || !value) {
         maxPeople = 0;
     } else {
         maxPeople = value;
@@ -52,4 +53,12 @@ export function setMaxPeople(value) {
 
 export function getMaxPeople() {
     return maxPeople;
+}
+
+export function setPeopleAlreadyCounted(value){
+    if (isNaN(value) || !value) {
+        counter = 0;
+    } else {
+        counter = value;
+    }
 }
