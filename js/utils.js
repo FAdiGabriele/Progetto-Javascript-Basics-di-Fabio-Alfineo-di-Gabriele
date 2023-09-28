@@ -43,7 +43,6 @@ export function getCounterValue() {
 }
 
 export function setMaxPeople(value) {
-    console.log(value);
     if (isNaN(value) || !value) {
         maxPeople = 0;
     } else {
