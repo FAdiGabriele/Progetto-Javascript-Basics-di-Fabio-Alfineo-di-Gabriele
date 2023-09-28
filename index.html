@@ -5,26 +5,33 @@
     <title>People Counter</title>
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico"> <!-- Favicon -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"> <!-- Font -->
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"><!-- Font -->
+
     <link rel='stylesheet' href='./css/styles.css' /> <!-- CSS -->
 
     <script type="module" src="./js/main.js"></script> <!-- JS -->
 </head>
 
 <body>
-    <div class="screen_container">
-        <p class="screen" id="screen"></p>
+    <header></header>
+    <div class="main">
+        <p class="label" >Persone presenti attualmente:</p>
+        <div class="screen_container">
+            <p class="screen" id="screen"></p>
+        </div>
+        <div class="button_container">
+            <div class="button" id="add">
+                <p class="button_text symbol">+</p>
+            </div>
+            <div class="button" id="reset">
+                <p class="button_text">RESET</p>
+            </div>
+            <div class="button" id="minus">
+                <p class="button_text symbol">-</p>
+            </div>
+        </div>
     </div>
-    <div class="button" id="add">
-        AGGIUNGI
-    </div>
-    <div class="button" id="minus">
-        SOTTRAI
-    </div>
-    <div class="button" id="reset">
-        RESET
-    </div>
+    <footer></footer>
 </body>
 
 </html>

@@ -1,31 +1,48 @@
 * {
     font-family: 'Roboto', sans-serif;
+    font-size: 30px;
 }
 
 .button {
-    text-decoration: none;
-
-    color: #fff;
-    font-weight: bold;
-    padding: 20px;
     text-align: center;
     border: 2px solid #5D6063;
     background-color: #5995DA;
+    margin: 20px 20px;
+    width: 30%;
+}
 
-    width: 200px;
-    margin: 20px auto;
+.button_text{
+    text-decoration: none;
+    color: #fff;
+    justify-content: center;
+    padding: 0px auto;
+    font-size: 40px;
 }
 
 .screen_container {
-    font-size: 50px;
     text-align: center;
     border: 2px solid #5D6063;
-    width: 200px;
-    margin: 20px auto;
     padding-left: 20px;
     padding-right: 20px;
+    margin: 20px
+}
+
+.button_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main {
+    width: 60%;
+    margin: 20px auto;
+    padding: 10px;
 }
 
 .screen {
     margin: auto 0px;
+    font-size: 80px;
+}
+
+.label{
+    margin: 20px
 }
