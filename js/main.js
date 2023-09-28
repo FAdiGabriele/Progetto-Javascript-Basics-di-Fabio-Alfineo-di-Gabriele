@@ -37,6 +37,7 @@ subtractButton.addEventListener("click", decreaseFunction);
 resetButton.addEventListener("click", resetFunction); 
 
 function initApplication(){
-    utils.setMaxPeople(prompt("Inserisci il numero di persone già presenti, se non inserirai un numero sarà automaticamente 0"));
+    utils.setMaxPeople(prompt("Inserisci il numero di persone massime, se non inserirai un numero sarà automaticamente 0"));
+    utils.setPeopleAlreadyCounted(prompt("Inserisci il numero di persone già presenti, se non inserirai un numero sarà automaticamente 0"))   
     updateFunction();
 }
