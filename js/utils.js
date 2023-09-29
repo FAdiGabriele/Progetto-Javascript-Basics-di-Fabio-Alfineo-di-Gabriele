@@ -42,7 +42,7 @@ export function getCounterValue() {
     return counter;
 }
 
-export function setMaxPeople(value) {
+export function setMaxValue(value) {
     if (isNaN(value) || !value) {
         maxPeople = 0;
     } else {
@@ -54,7 +54,7 @@ export function getMaxPeople() {
     return maxPeople;
 }
 
-export function setPeopleAlreadyCounted(value){
+export function setCounterValue(value){
     if (isNaN(value) || !value) {
         counter = 0;
     } else {
