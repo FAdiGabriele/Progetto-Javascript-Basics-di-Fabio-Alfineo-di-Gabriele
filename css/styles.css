@@ -6,6 +6,7 @@
 body{
     background-color: #06161e;
     height: 100%;
+    margin: 0px;
 }
 
 .input_field{
@@ -59,6 +60,24 @@ body{
     text-align: left;
 }
 
+.header{
+    background-color: #41c1ba;
+    padding: 20px;
+    border: 1px solid #000000;
+}
+
+.footer{
+    background-color: #41c1ba;
+    padding: 20px;
+    border: 1px solid #000000;
+}
+
+.screen_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
 
@@ -72,6 +91,9 @@ body{
 
     .section{
         padding: 0px;
+        margin-top: 10px;
+        margin-left: 1px;
+        margin-right: 1px;
     }
 
     .input_field{
@@ -96,15 +118,8 @@ body{
         font-size: 25px;
     }
     
-
     .label{
         font-size: 18px;
-    }
-
-    .screen_box{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
     }
 }
 
@@ -119,6 +134,18 @@ body{
 
     .input_field{
         width: 100%;
+    }
+
+    .header{
+        margin: 10px auto;
+        margin-top: 0px;
+        width: 80%;
+    }
+
+    .footer{
+        margin: 10px auto;
+        width: 80%;
+        margin-bottom: 0px;
     }
 
     .section{
@@ -141,16 +168,22 @@ body{
     .button{
         margin: 10px auto;
     }
-
-    .screen_box{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
 }
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
+    .header{
+        margin: 20px auto;
+        margin-top: 0px;
+        width: 80%;
+    }
+
+    .footer{
+        margin: 20px auto;
+        margin-bottom: 0px;
+        width: 80%;
+    }
+
     .section{
         margin: 20px auto;
         width: 80%;
