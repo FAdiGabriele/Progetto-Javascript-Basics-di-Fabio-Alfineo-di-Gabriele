@@ -5,18 +5,23 @@
     <title>People Counter</title>
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico"> <!-- Favicon -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"><!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+    <!-- Font -->
 
     <link rel='stylesheet' href='./css/styles.css' /> <!-- CSS -->
 
     <script type="module" src="./js/main.js"></script> <!-- JS -->
 
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' /> <!-- Responsive behaviour -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <!-- Responsive behaviour -->
 </head>
 
 <body>
     <header class="header">
-        People Counter
+        <img class="main_logo" src="./img/logo.svg">
+        <div class="title_container">
+            <h1>PEOPLE COUNTER</h1>
+        </div>
     </header>
     <div class="section">
 
@@ -61,8 +66,15 @@
             </div>
         </div>
     </div>
+    <div class="section">
+        <div class="people_container" id="people_container"></div>
+    </div>
     <footer class="footer">
-        Developed by Fabio Alfineo di Gabriele
+        <p class="sign">Developed by <br>Fabio Alfineo di Gabriele</p>
+        <div class="social_container">
+            <a class="link_social" href="https://www.linkedin.com/in/developer-android/"><img class="social_logo" src="img/linkedin_logo.svg"></a>
+            <a class="link_social" href="https://github.com/FadiGabriele"><img class="social_logo" src="img/github_logo.svg"></a>
+        </div>
     </footer>
 </body>
 
