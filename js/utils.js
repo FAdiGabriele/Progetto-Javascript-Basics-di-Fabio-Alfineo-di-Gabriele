@@ -15,7 +15,7 @@ function isFirstOverSeventyPercentOfSecond(first, second) {
 export function checkCounterColor(value, maxValueAllowed) {
     let selectedColor;
 
-    if (maxValueAllowed > 0 && value >= maxValueAllowed) {
+    if (maxValueAllowed > 0 && value > maxValueAllowed) {
         selectedColor = colors.red;
     } else if (maxValueAllowed > 0 && isFirstOverSeventyPercentOfSecond(value, maxValueAllowed)) {
         selectedColor = colors.orange;
@@ -60,4 +60,16 @@ export function setCounterValue(value){
     } else {
         counter = value;
     }
+}
+
+export function resetValueOfDOMElementInput(elementDOM){
+    elementDOM.value = null;
+}
+
+export function setHtmlElementValue(element, value){
+    element.innerHTML = value;
+}
+
+export function isCounterEqualOrGreaterOfMax(counterValue){
+    return maxPeople > 0 && counterValue > maxPeople;
 }
