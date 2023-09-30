@@ -89,8 +89,6 @@ function removePerson(isRequestedToRemoveAll) {
 }
 
 function updatePersonDisplay(counterValue){
-    if(counterValue == 0 || isNaN(counterValue) || !counterValue ) return;
-
     removePerson(true);
     for(let i = 1; i <= counterValue; i++){
         addPerson(i);
