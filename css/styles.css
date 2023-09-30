@@ -9,6 +9,11 @@ body {
     margin: 0px;
 }
 
+.title{
+    font-size: 40px;
+    padding: 0px 2px;
+}
+
 /* Header selectors style */
 
 .header {
@@ -146,6 +151,10 @@ body {
         height: 25px;
     }
 
+    .title{
+        font-size: 20px;
+    }
+
     /* End Footer selectors style */
 
     .button_text {
@@ -226,6 +235,9 @@ body {
         height: 60px;
     }
 
+    .title{
+        font-size: 30px;
+    }
     /* End Footer selectors style */
 
     .input_organizer {
@@ -249,6 +261,7 @@ body {
 
     .label {
         font-size: 16px;
+        margin: 20px auto;
     }
 
     .button {
