@@ -3,13 +3,59 @@
     font-size: 25px;
 }
 
-body{
+body {
     background-color: #06161e;
     height: 100%;
     margin: 0px;
 }
 
-.input_field{
+/* Header selectors style */
+
+.header {
+    background-color: #41c1ba;
+    padding: 10px;
+    border: 1px solid #000000;
+    display: flex;
+}
+
+.title_container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    color: #06161e;
+    font-size: large;
+    text-align: center;
+}
+
+.main_logo {
+    width: 75px;
+    height: 75px;
+}
+
+/* End Header selectors style */
+
+/* Footer selectors style */
+
+.footer {
+    background-color: #41c1ba;
+    padding: 20px;
+    border: 1px solid #000000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social_container {
+    display: flex;
+}
+
+.social_logo {
+    margin: auto;
+}
+
+/* End Footer selectors style */
+
+.input_field {
     text-align: center;
     border: 1px solid #5D6063;
 }
@@ -24,13 +70,13 @@ body{
     color: #ffffff;
 }
 
-.button_text{
+.button_text {
     text-decoration: none;
     justify-content: center;
     font-size: 40px;
 }
 
-.button_container{
+.button_container {
     display: flex;
 }
 
@@ -51,238 +97,223 @@ body{
     font-size: 60px;
 }
 
-.screen_box{
+.screen_box {
     width: 50%;
 }
 
-.label{
+.label {
     margin: 20px;
     text-align: left;
 }
 
-.header{
-    background-color: #41c1ba;
-    padding: 10px;
-    border: 1px solid #000000;
-    display: flex;
-}
-
-.footer{
-    background-color: #41c1ba;
-    padding: 20px;
-    border: 1px solid #000000;
-    display: flex;
-    justify-content: space-between;
-}
-
-.screen_box{
+.screen_box {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.title_container{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: auto;
-    color: #06161e;
-    font-size: large;
-    text-align: center;
-}
 
-.people_container{
+.people_container {
     border: 1px solid #000000;
     margin: 10px;
     padding: 10px;
 }
 
-.social_container{
-    display: flex;
-}
-
-.social_logo{
-    margin: auto;
-}
-
-.person_icon{
-     width: 50px;
-     height: 50px;
+.person_icon {
+    width: 50px;
+    height: 50px;
 }
 
 
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
 
-    .button_text{
+    /* Footer selectors style */
+
+    .sign {
+        font-size: 12px;
+    }
+
+    .social_container {
+        margin: auto, 0px;
+    }
+
+    .social_logo {
+        width: 25px;
+        height: 25px;
+    }
+
+    /* End Footer selectors style */
+
+    .button_text {
         font-size: 20px;
     }
 
-    .screen{
+    .screen {
         font-size: 60px;
         margin: 10px;
     }
 
-    .section{
+    .section {
         padding: 0px;
         margin: 10px 1px;
     }
 
-    .input_field{
+    .input_field {
         width: 90%;
         margin: 0px;
     }
 
     .button {
-        margin : 0px;
+        margin: 0px;
     }
 
     .update {
         margin: 10px auto;
     }
 
-    .update{
+    .update {
         width: 50%;
         padding: 20px 20px;
     }
 
-    .button_update{
+    .button_update {
         font-size: 25px;
     }
-    
-    .label{
+
+    .label {
         font-size: 18px;
         margin: 10px;
     }
 
-    .button_container{
+    .button_container {
         padding: 10px;
-    }
-
-    .main_logo{
-        width: 75px;
-        height: 75px;
-    }
-
-    .social_logo{
-        width: 25px;
-        height: 25px;
-    }
-
-    .sign{
-        font-size: 12px;
-    }
-
-    .social_container{
-        margin: auto, 0px;
     }
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
 
-    .input_organizer{
+
+    /* Header selectors style */
+
+    .header {
+        margin: 10px auto;
+        margin-top: 0px;
+        width: 80%;
+    }
+
+    .main_logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* End Header selectors style */
+
+    /* Footer selectors style */
+
+    .footer {
+        margin: 10px auto;
+        width: 80%;
+        margin-bottom: 0px;
+    }
+
+    .sign {
+        font-size: 20px;
+    }
+
+    .social_logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* End Footer selectors style */
+
+    .input_organizer {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .input_field{
+    .input_field {
         width: 100%;
     }
 
-    .header{
-        margin: 10px auto;
-        margin-top: 0px;
-        width: 80%;
-    }
-
-    .footer{
-        margin: 10px auto;
-        width: 80%;
-        margin-bottom: 0px;
-    }
-
-    .section{
+    .section {
         margin: 10px auto;
         width: 80%;
     }
 
-    .button_text{
+    .button_text {
         font-size: 30px;
     }
 
-    .update{
+    .update {
         width: 50%;
     }
 
-    .label{
+    .label {
         font-size: 16px;
     }
 
-    .button{
+    .button {
         margin: 10px auto;
-    }
-
-    .main_logo{
-        width: 100px;
-        height: 100px;
-    }
-
-    .social_logo{
-        width: 60px;
-        height: 60px;
-    }
-
-    .sign{
-        font-size: 20px;
     }
 }
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
-    .header{
+
+    /* Header selectors style */
+
+    .header {
         margin: 20px auto;
         margin-top: 0px;
         width: 80%;
     }
 
-    .footer{
+    .main_logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* End Header selectors style */
+
+    /* Footer selectors style */
+
+    .footer {
         margin: 20px auto;
         margin-bottom: 0px;
         width: 80%;
     }
 
-    .section{
-        margin: 20px auto;
-        width: 80%;
+    .sign {
+        font-size: 24px;
     }
 
-    .input_organizer{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .input_field{
-        width: 60%;
-        margin: 20px 20px;
-    }
-
-    .update{
-        width: 30%;
-    }
-
-    .main_logo{
-        width: 120px;
-        height: 120px;
-    }
-
-    .social_logo{
+    .social_logo {
         width: 75px;
         height: 75px;
     }
 
-    .sign{
-        font-size: 24px;
+    /* End Footer selectors style */
+
+    .section {
+        margin: 20px auto;
+        width: 80%;
+    }
+
+    .input_organizer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .input_field {
+        width: 60%;
+        margin: 20px 20px;
+    }
+
+    .update {
+        width: 30%;
     }
 }
