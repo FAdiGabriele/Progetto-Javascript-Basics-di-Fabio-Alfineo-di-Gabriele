@@ -38,11 +38,11 @@ let updateCounterValueFunction = function updateCounterValue() {
     updateCounterscreen();
 }
 
-const addButton = generatedUtils.generateAddButton();
-const subtractButton = generatedUtils.generateMinusButton();
-const resetButton = generatedUtils.generateResetButton();
-const screen = generatedUtils.generateScreen();
-const screenMax = generatedUtils.generateMaxScreen();
+const addButton = generatedUtils.generateButton("add", "+");
+const subtractButton = generatedUtils.generateButton("minus", "-");
+const resetButton = generatedUtils.generateButton("reset", "RESET");
+const screen = generatedUtils.generateScreen("screen");
+const screenMax = generatedUtils.generateScreen("max_screen");
 const updateMaxButton = document.getElementById("update_max");
 const updateCounterButton = document.getElementById("update_counter");
 const updateMaxInput = document.getElementById("update_max_value");
@@ -68,8 +68,8 @@ function generateContent() {
     let containerScreenDiv = document.createElement("div");
     containerScreenDiv.className = "content_organizer";
 
-    containerScreenDiv.appendChild(generatedUtils.generateMaxScreenBox(screenMax))
-    containerScreenDiv.appendChild(generatedUtils.generatePeopleScreenBox(screen));
+    containerScreenDiv.appendChild(generatedUtils.generateScreenBox(generatedUtils.generateLabel("Capacità massima di persone:"), screenMax))
+    containerScreenDiv.appendChild(generatedUtils.generateScreenBox(generatedUtils.generateLabel("Persone presenti nel luogo:"), screen));
 
     generatedElementContainer.appendChild(containerScreenDiv);
 

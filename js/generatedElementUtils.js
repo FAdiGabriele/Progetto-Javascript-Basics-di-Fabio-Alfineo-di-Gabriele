@@ -1,80 +1,36 @@
-export function generateAddButton() {
-    let addButton = document.createElement("button");
-    addButton.className = "button";
-    addButton.id = "add"
-    addButton.innerHTML = "+"
+export function generateButton(id, text){
+    let button = document.createElement("button");
 
-    return addButton;
+    button.className = "button";
+    button.id = id;
+    button.innerHTML = text;
+
+    return button;
 }
 
-export function generateMinusButton() {
-    let minusButton = document.createElement("button");
-    minusButton.className = "button";
-    minusButton.id = "minus"
-    minusButton.innerHTML = "-"
-
-    return minusButton;
-}
-
-export function generateResetButton() {
-    let resetButton = document.createElement("button");
-    resetButton.className = "button";
-    resetButton.id = "reset"
-    resetButton.innerHTML = "RESET"
-
-    return resetButton;
-}
-
-export function generateMaxScreen() {
-    let maxScreen = document.createElement("p");
-    maxScreen.className = "screen";
-    maxScreen.id = "max_screen"
-
-    return maxScreen;
-}
-
-export function generateScreen() {
+export function generateScreen(id) {
     let screen = document.createElement("p");
     screen.className = "screen";
-    screen.id = "screen"
+    screen.id = id
 
     return screen;
 }
 
-export function generateMaxScreenBox(screenMaxElement) {
-    let maxScreenBox = document.createElement("div");
-    maxScreenBox.className = "screen_box"
+export function generateScreenBox(labelElement, screenElement) {
 
-    maxScreenBox.appendChild(generateMaxLabel());
-    maxScreenBox.appendChild(screenMaxElement);
+    let screenBox = document.createElement("div");
+    screenBox.className = "screen_box"
 
-    return maxScreenBox;
+    screenBox.appendChild(labelElement);
+    screenBox.appendChild(screenElement);
 
+    return screenBox;
 }
 
-export function generatePeopleScreenBox(screenElement) {
-
-    let peopleScreenBox = document.createElement("div");
-    peopleScreenBox.className = "screen_box"
-
-    peopleScreenBox.appendChild(generatePeopleLabel());
-    peopleScreenBox.appendChild(screenElement);
-
-    return peopleScreenBox;
-}
-
-function generateMaxLabel() {
+export function generateLabel(text) {
     let maxLabel = document.createElement("p");
     maxLabel.className = "label";
-    maxLabel.innerHTML = "Capacità massima di persone:";
+    maxLabel.innerHTML = text;
 
     return maxLabel;
-}
-
-function generatePeopleLabel() {
-    let peopleLabel = document.createElement("p");
-    peopleLabel.className = "label";
-    peopleLabel.innerHTML = "Persone presenti nel luogo:"
-
-    return peopleLabel;
 }

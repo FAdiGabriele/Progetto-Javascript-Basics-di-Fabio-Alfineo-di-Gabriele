@@ -7,11 +7,6 @@ const colors = {
 let counter = 0;
 let maxPeople = 0;
 
-function isFirstOverSeventyPercentOfSecond() {
-    const seventyPercentOfSecond = 0.70 * maxPeople;
-    return maxPeople > 0 && counter > seventyPercentOfSecond;
-}
-
 export function checkCounterColor() {
     let selectedColor;
 
@@ -19,7 +14,7 @@ export function checkCounterColor() {
         case isCounterEqualOrGreaterOfMax(counter):
             selectedColor = colors.red;
             break;
-        case isFirstOverSeventyPercentOfSecond():
+        case isCounterGreaterThanSeventyPerCentOfMax():
             selectedColor = colors.orange;
             break;
         default:
@@ -67,4 +62,9 @@ export function setCounterValue(value) {
 
 export function isCounterEqualOrGreaterOfMax(counterValue) {
     return maxPeople > 0 && counterValue > maxPeople;
+}
+
+function isCounterGreaterThanSeventyPerCentOfMax() {
+    const seventyPercentOfSecond = 0.70 * maxPeople;
+    return maxPeople > 0 && counter > seventyPercentOfSecond;
 }
