@@ -7,20 +7,23 @@ const colors = {
 let counter = 0;
 let maxPeople = 0;
 
-function isFirstOverSeventyPercentOfSecond(first, second) {
-    const seventyPercentOfSecond = 0.70 * second;
-    return first > seventyPercentOfSecond;
+function isFirstOverSeventyPercentOfSecond() {
+    const seventyPercentOfSecond = 0.70 * maxPeople;
+    return maxPeople > 0 && counter > seventyPercentOfSecond;
 }
 
-export function checkCounterColor(value, maxValueAllowed) {
+export function checkCounterColor() {
     let selectedColor;
 
-    if (maxValueAllowed > 0 && value > maxValueAllowed) {
-        selectedColor = colors.red;
-    } else if (maxValueAllowed > 0 && isFirstOverSeventyPercentOfSecond(value, maxValueAllowed)) {
-        selectedColor = colors.orange;
-    } else {
-        selectedColor = colors.black;
+    switch (true) {
+        case isCounterEqualOrGreaterOfMax(counter):
+            selectedColor = colors.red;
+            break;
+        case isFirstOverSeventyPercentOfSecond():
+            selectedColor = colors.orange;
+            break;
+        default:
+            selectedColor = colors.black;
     }
 
     return selectedColor;
@@ -54,7 +57,7 @@ export function getMaxPeople() {
     return maxPeople;
 }
 
-export function setCounterValue(value){
+export function setCounterValue(value) {
     if (isNaN(value) || !value) {
         counter = 0;
     } else {
@@ -62,14 +65,14 @@ export function setCounterValue(value){
     }
 }
 
-export function resetValueOfDOMElementInput(elementDOM){
+export function resetValueOfDOMElementInput(elementDOM) {
     elementDOM.value = null;
 }
 
-export function setHtmlElementValue(element, value){
+export function setHtmlElementValue(element, value) {
     element.innerHTML = value;
 }
 
-export function isCounterEqualOrGreaterOfMax(counterValue){
+export function isCounterEqualOrGreaterOfMax(counterValue) {
     return maxPeople > 0 && counterValue > maxPeople;
 }
