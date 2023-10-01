@@ -1,37 +1,37 @@
 import * as utils from './utils.js';
+import * as generatedUtils from './generatedElementUtils.js'
+import * as personUtils from './updatePersonGraphicsUtils.js'
 
 let increaseFunction = function increaseCounter() {
     utils.increaseCounter();
-    addPerson(utils.getCounterValue());
+    personUtils.addPerson(peopleContainer, utils.getCounterValue());
     updateFunction();
 }
 
 let decreaseFunction = function decreaseCounter() {
     if (utils.getCounterValue() > 0) {
         utils.decreaseCounter();
-        removePerson(false);
+        personUtils.removePerson(peopleContainer, false);
         updateFunction();
     }
 }
 
 let resetFunction = function resetCounter() {
     utils.resetCounter();
-    removePerson(true);
+    personUtils.removePerson(peopleContainer, true);
     updateFunction();
 }
 
 let updateFunction = function updateCounterscreen() {
-    let counterValue = utils.getCounterValue();
-    let maxCounterValue = utils.getMaxPeople();
-    utils.setHtmlElementValue(screen, counterValue);
-    utils.setHtmlElementValue(screenMax, maxCounterValue.toString());
-    screen.style.color = utils.checkCounterColor(counterValue, maxCounterValue);
+    utils.setHtmlElementValue(screen, utils.getCounterValue());
+    utils.setHtmlElementValue(screenMax, utils.getMaxPeople().toString());
+    screen.style.color = utils.checkCounterColor();
 }
 
 let updateMaxValueFunction = function updateMaxValue() {
     let maxValueUpdated = parseInt(updateMaxInput.value);
     utils.setMaxValue(maxValueUpdated);
-    updatePersonDisplay(utils.getCounterValue());
+    personUtils.updatePersonDisplay(peopleContainer, utils.getCounterValue());
     utils.resetValueOfDOMElementInput(updateMaxInput);
     updateFunction();
 }
@@ -39,21 +39,22 @@ let updateMaxValueFunction = function updateMaxValue() {
 let updateCounterValueFunction = function updateCounterValue() {
     let counterValueUpdated = parseInt(updateCounterInput.value);
     utils.setCounterValue(counterValueUpdated);
-    updatePersonDisplay(counterValueUpdated);
+    personUtils.updatePersonDisplay(peopleContainer, counterValueUpdated);
     utils.resetValueOfDOMElementInput(updateCounterInput);
     updateFunction();
 }
 
-const addButton = document.getElementById("add");
-const subtractButton = document.getElementById("minus");
-const resetButton = document.getElementById("reset");
-const screen = document.getElementById("screen");
-const screenMax = document.getElementById("max_screen");
+const addButton = generatedUtils.generateAddButton();
+const subtractButton = generatedUtils.generateMinusButton();
+const resetButton = generatedUtils.generateResetButton();
+const screen = generatedUtils.generateScreen();
+const screenMax = generatedUtils.generateMaxScreen();
 const updateMaxButton = document.getElementById("update_max");
 const updateCounterButton = document.getElementById("update_counter");
 const updateMaxInput = document.getElementById("update_max_value");
 const updateCounterInput = document.getElementById("update_counter_value");
 const peopleContainer = document.getElementById("people_container");
+const generatedElementContainer = document.getElementById("generated_elements_container")
 
 initApplication();
 
@@ -64,33 +65,25 @@ updateMaxButton.addEventListener("click", updateMaxValueFunction);
 updateCounterButton.addEventListener("click", updateCounterValueFunction);
 
 function initApplication() {
+    generateContent();
     updateFunction();
 }
 
-function addPerson(counterValue) {
-    let singlePerson = document.createElement("img");
-    singlePerson.className = "person_icon"
-    if (utils.isCounterEqualOrGreaterOfMax(counterValue)) {
-        singlePerson.src = "../img/red_person_icon.svg";
-    } else {
-        singlePerson.src = "../img/person_icon.svg";
-    }
-    
-    peopleContainer.appendChild(singlePerson);
-}
 
-function removePerson(isRequestedToRemoveAll) {
-    if (isRequestedToRemoveAll) {
-        peopleContainer.innerHTML = ""
-    } else {
-        let lastPerson = peopleContainer.lastElementChild;
-        peopleContainer.removeChild(lastPerson);
-    }
-}
+function generateContent() {
+    let containerScreenDiv = document.createElement("div");
+    containerScreenDiv.className = "content_organizer";
 
-function updatePersonDisplay(counterValue){
-    removePerson(true);
-    for(let i = 1; i <= counterValue; i++){
-        addPerson(i);
-    }
+    containerScreenDiv.appendChild(generatedUtils.generateMaxScreenBox(screenMax))
+    containerScreenDiv.appendChild(generatedUtils.generatePeopleScreenBox(screen));
+
+    generatedElementContainer.appendChild(containerScreenDiv);
+
+    let containerButtonDiv = document.createElement("div");
+    containerButtonDiv.className = "content_organizer";
+    containerButtonDiv.appendChild(addButton);
+    containerButtonDiv.appendChild(resetButton);
+    containerButtonDiv.appendChild(subtractButton);
+
+    generatedElementContainer.appendChild(containerButtonDiv);
 }
