@@ -65,14 +65,6 @@ export function setCounterValue(value) {
     }
 }
 
-export function resetValueOfDOMElementInput(elementDOM) {
-    elementDOM.value = null;
-}
-
-export function setHtmlElementValue(element, value) {
-    element.innerHTML = value;
-}
-
 export function isCounterEqualOrGreaterOfMax(counterValue) {
     return maxPeople > 0 && counterValue > maxPeople;
 }

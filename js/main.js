@@ -23,8 +23,8 @@ let resetFunction = function resetCounter() {
 }
 
 let updateFunction = function updateCounterscreen() {
-    utils.setHtmlElementValue(screen, utils.getCounterValue());
-    utils.setHtmlElementValue(screenMax, utils.getMaxPeople().toString());
+    screen.innerHTML = utils.getCounterValue();
+    screenMax.innerHTML = utils.getMaxPeople();
     screen.style.color = utils.checkCounterColor();
 }
 
@@ -32,7 +32,7 @@ let updateMaxValueFunction = function updateMaxValue() {
     let maxValueUpdated = parseInt(updateMaxInput.value);
     utils.setMaxValue(maxValueUpdated);
     personUtils.updatePersonDisplay(peopleContainer, utils.getCounterValue());
-    utils.resetValueOfDOMElementInput(updateMaxInput);
+    updateMaxInput.value = null;
     updateFunction();
 }
 
@@ -40,7 +40,7 @@ let updateCounterValueFunction = function updateCounterValue() {
     let counterValueUpdated = parseInt(updateCounterInput.value);
     utils.setCounterValue(counterValueUpdated);
     personUtils.updatePersonDisplay(peopleContainer, counterValueUpdated);
-    utils.resetValueOfDOMElementInput(updateCounterInput);
+    updateCounterInput.value = null;
     updateFunction();
 }
 
