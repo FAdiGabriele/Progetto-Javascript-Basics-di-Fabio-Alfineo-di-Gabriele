@@ -5,27 +5,21 @@ import * as personUtils from './updatePersonGraphicsUtils.js'
 let increaseFunction = function increaseCounter() {
     utils.increaseCounter();
     personUtils.addPerson(peopleContainer, utils.getCounterValue());
-    updateFunction();
+    updateCounterscreen();
 }
 
 let decreaseFunction = function decreaseCounter() {
     if (utils.getCounterValue() > 0) {
         utils.decreaseCounter();
         personUtils.removePerson(peopleContainer, false);
-        updateFunction();
+        updateCounterscreen();
     }
 }
 
 let resetFunction = function resetCounter() {
     utils.resetCounter();
     personUtils.removePerson(peopleContainer, true);
-    updateFunction();
-}
-
-let updateFunction = function updateCounterscreen() {
-    screen.innerHTML = utils.getCounterValue();
-    screenMax.innerHTML = utils.getMaxPeople();
-    screen.style.color = utils.checkCounterColor();
+    updateCounterscreen();
 }
 
 let updateMaxValueFunction = function updateMaxValue() {
@@ -33,7 +27,7 @@ let updateMaxValueFunction = function updateMaxValue() {
     utils.setMaxValue(maxValueUpdated);
     personUtils.updatePersonDisplay(peopleContainer, utils.getCounterValue());
     updateMaxInput.value = null;
-    updateFunction();
+    updateCounterscreen();
 }
 
 let updateCounterValueFunction = function updateCounterValue() {
@@ -41,7 +35,7 @@ let updateCounterValueFunction = function updateCounterValue() {
     utils.setCounterValue(counterValueUpdated);
     personUtils.updatePersonDisplay(peopleContainer, counterValueUpdated);
     updateCounterInput.value = null;
-    updateFunction();
+    updateCounterscreen();
 }
 
 const addButton = generatedUtils.generateAddButton();
@@ -66,7 +60,7 @@ updateCounterButton.addEventListener("click", updateCounterValueFunction);
 
 function initApplication() {
     generateContent();
-    updateFunction();
+    updateCounterscreen();
 }
 
 
@@ -86,4 +80,10 @@ function generateContent() {
     containerButtonDiv.appendChild(subtractButton);
 
     generatedElementContainer.appendChild(containerButtonDiv);
+}
+
+function updateCounterscreen() {
+    screen.innerHTML = utils.getCounterValue();
+    screenMax.innerHTML = utils.getMaxPeople();
+    screen.style.color = utils.checkCounterColor();
 }
